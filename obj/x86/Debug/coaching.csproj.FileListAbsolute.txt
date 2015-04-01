@@ -1,0 +1,12 @@
+D:\Tanisha\coaching\bin\Debug\coaching.exe
+D:\Tanisha\coaching\bin\Debug\coaching.pdb
+D:\Tanisha\coaching\obj\x86\Debug\coaching.Form1.resources
+D:\Tanisha\coaching\obj\x86\Debug\coaching.Properties.Resources.resources
+D:\Tanisha\coaching\obj\x86\Debug\coaching.csproj.GenerateResource.Cache
+D:\Tanisha\coaching\obj\x86\Debug\coaching.exe
+D:\Tanisha\coaching\obj\x86\Debug\coaching.pdb
+D:\Tanisha\coaching\obj\x86\Debug\coaching.Form2.resources
+D:\Tanisha\coaching\obj\x86\Debug\coaching.Form3.resources
+D:\Tanisha\coaching\obj\x86\Debug\coaching.Form4.resources
+D:\Tanisha\coaching\obj\x86\Debug\coaching.Form5.resources
+D:\Tanisha\coaching\obj\x86\Debug\coaching.Form6.resources
