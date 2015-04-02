@@ -20,6 +20,7 @@ namespace coaching
 
         private void Sub_Click(object sender, EventArgs e)
         {
+            Console.Write("Log in initialised");
             name = username.Text;
             pwd = password.Text;
             Console.Write("Name Obtained");
