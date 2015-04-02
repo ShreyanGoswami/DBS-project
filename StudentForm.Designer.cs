@@ -75,7 +75,7 @@
             this.PM_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PM_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lscourse = new System.Windows.Forms.Label();
             this.SID = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -138,6 +138,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Profile";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // sem
             // 
@@ -542,7 +543,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.label23);
+            this.tabPage4.Controls.Add(this.lscourse);
             this.tabPage4.Controls.Add(this.SID);
             this.tabPage4.Controls.Add(this.button2);
             this.tabPage4.Controls.Add(this.label20);
@@ -555,14 +556,14 @@
             this.tabPage4.Text = "Result";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label23
+            // lscourse
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(212, 216);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(41, 13);
-            this.label23.TabIndex = 8;
-            this.label23.Text = "label21";
+            this.lscourse.AutoSize = true;
+            this.lscourse.Location = new System.Drawing.Point(212, 216);
+            this.lscourse.Name = "lscourse";
+            this.lscourse.Size = new System.Drawing.Size(41, 13);
+            this.lscourse.TabIndex = 8;
+            this.lscourse.Text = "label21";
             // 
             // SID
             // 
@@ -581,6 +582,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "NEXT";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label20
             // 
@@ -749,6 +751,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label cont;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lscourse;
     }
 }

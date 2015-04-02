@@ -12,19 +12,28 @@ namespace coaching
 {
     public partial class StudentForm : Form
     {
-        private MySqlConnection conn;
-        private String id = "1234";
+        /*class variables for connecting to the MySQL Database
+         * *conn is used to connect to database
+         *id is used to fetch the result of the student with the particular id
+         *dr is used to read the data from the table
+         *cmd is used to pass MySQL query to the database
+         */
+        private MySqlConnection conn
         private MySqlDataReader dr;
         private MySqlCommand cmd;
+
+        /*class variables to store the student information
+         */
+        String sid, sname, sloc,sdob,scontact,smail,scourse,ssec,ssem;
 
         public StudentForm()
         {
             InitializeComponent();
         }
 
-        public StudentForm(String id)
+        public StudentForm(String sid)
         {
-            this.id = id;
+            this.sid = sid;
             InitializeComponent();
             Dispay();
             LoadFinance();
@@ -47,15 +56,26 @@ namespace coaching
             //to load profile information
             if (dr.Read())
             {
-                ID.Text = dr.GetString(0);
-                name.Text = dr.GetString(1);
-                address.Text = dr.GetString(2);
+                sid = 
+                sname = dr.GetString(1);
+                sloc = dr.GetString(2);
+                sdob = dr.GetString(3);
+                scontact = dr.GetString(4);
+                smail = dr.GetString(5);
+                scourse = dr.GetString(6);
+                ssec = dr.GetString(7);
+                ssem = dr.GetString(8);
 
-                dob.Text = dr.GetString(3);
-                contact.Text = dr.GetString(4);
-                email.Text = dr.GetString(5);
-                course.Text = dr.GetString(6);
-                sec.Text = dr.GetString(7);
+                ID.Text = sid;
+                name.Text = sname;
+                address.Text = sloc;
+
+                dob.Text = sdob;
+                contact.Text = scontact;
+                email.Text = smail;
+                course.Text = scourse;
+                sec.Text = ssec;
+                sem.Text = ssem;
             }
             //close connection and reader
             dr.Close();
@@ -77,6 +97,7 @@ namespace coaching
             dr = cmd.ExecuteReader();
             if (dr.Read())
             {
+
                 f_id.Text = dr.GetString(0);
                 price.Text = dr.GetString(1);
                 paid.Text = dr.GetString(2);
@@ -90,6 +111,16 @@ namespace coaching
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

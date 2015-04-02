@@ -121,6 +121,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Result_ENG";
             this.Text = "Marks";
+            this.Load += new System.EventHandler(this.Result_ENG_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
