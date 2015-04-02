@@ -1,6 +1,6 @@
 ﻿namespace coaching
 {
-    partial class Form2
+    partial class StudentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@
             this.contact = new System.Windows.Forms.Label();
             this.dob = new System.Windows.Forms.Label();
             this.address = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -120,7 +120,7 @@
             this.tabPage1.Controls.Add(this.contact);
             this.tabPage1.Controls.Add(this.dob);
             this.tabPage1.Controls.Add(this.address);
-            this.tabPage1.Controls.Add(this.id);
+            this.tabPage1.Controls.Add(this.ID);
             this.tabPage1.Controls.Add(this.name);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label8);
@@ -212,14 +212,14 @@
             this.address.TabIndex = 11;
             this.address.Text = "label10";
             // 
-            // id
+            // ID
             // 
-            this.id.AutoSize = true;
-            this.id.Location = new System.Drawing.Point(247, 81);
-            this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(41, 13);
-            this.id.TabIndex = 10;
-            this.id.Text = "label10";
+            this.ID.AutoSize = true;
+            this.ID.Location = new System.Drawing.Point(247, 81);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(41, 13);
+            this.ID.TabIndex = 10;
+            this.ID.Text = "label10";
             // 
             // name
             // 
@@ -504,7 +504,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(738, 392);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // DAY
             // 
@@ -664,7 +663,7 @@
             this.progressBar1.Size = new System.Drawing.Size(155, 24);
             this.progressBar1.TabIndex = 2;
             // 
-            // Form2
+            // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -672,9 +671,8 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form2";
+            this.Name = "StudentForm";
             this.Text = "Student";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -702,7 +700,7 @@
         private System.Windows.Forms.Label contact;
         private System.Windows.Forms.Label dob;
         private System.Windows.Forms.Label address;
-        private System.Windows.Forms.Label id;
+        private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
