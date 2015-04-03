@@ -43,6 +43,7 @@ namespace coaching
                         String id = name.Substring(1);
                         StudentForm f2 = new StudentForm(id);
                         f2.Show();
+                        this.Close();
                         break;
 
                     case 'T':

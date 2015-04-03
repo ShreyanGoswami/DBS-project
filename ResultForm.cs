@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace coaching
 {
-    public partial class Form6 : Form
+    public partial class ResultForm : Form
     {
-        public Form6()
+        public ResultForm()
         {
             InitializeComponent();
         }

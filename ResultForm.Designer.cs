@@ -1,6 +1,6 @@
 ﻿namespace coaching
 {
-    partial class Form6
+    partial class ResultForm
     {
         /// <summary>
         /// Required designer variable.

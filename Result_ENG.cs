@@ -33,6 +33,7 @@ namespace coaching
         public Result_ENG(String id)
         {
             this.id = id;
+            ID.Text = id;
             InitializeComponent();
         }
 

@@ -106,7 +106,7 @@
             this.ID.TabIndex = 12;
             this.ID.Text = "label4";
             // 
-            // Form4
+            // Result_ENGBIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,8 +118,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form4";
+            this.Name = "Result_ENGBIO";
             this.Text = "Marks";
+            this.Load += new System.EventHandler(this.Result_ENGBIO_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

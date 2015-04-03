@@ -124,10 +124,28 @@ namespace coaching
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Result_ENG result = new Result_ENG(sid);
-            result.Show();
-            this.Close();
+            if (scourse == "ENG")
+            {
+                Result_ENG result = new Result_ENG(sid);
+                result.Show();
+                //close the current form or hide it?
+                this.Close();
+            }
+            else if (scourse == "ENG_BIO")
+            {
+                Result_ENGBIO result = new Result_ENGBIO(sid);
+                result.Show();
+                //close the current form or hide it?
+                this.Close();
+            }
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            LogIn newForm = new LogIn();
+            newForm.Show();
         }
     }
 }

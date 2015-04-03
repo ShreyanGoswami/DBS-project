@@ -34,12 +34,12 @@ C:\Users\Shreyan\Documents\DBS-project\bin\Debug\coaching.pdb
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.csprojResolveAssemblyReference.cache
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.LogIn.resources
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.StudentForm.resources
-C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Form4.resources
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Form5.resources
-C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Form6.resources
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Form7.resources
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Form8.resources
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Form9.resources
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Properties.Resources.resources
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.csproj.GenerateResource.Cache
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Result_ENG.resources
+C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Result_ENGBIO.resources
+C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.ResultForm.resources
