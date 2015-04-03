@@ -18,7 +18,7 @@ namespace coaching
          *dr is used to read the data from the table
          *cmd is used to pass MySQL query to the database
          */
-        private MySqlConnection conn
+        private MySqlConnection conn;
         private MySqlDataReader dr;
         private MySqlCommand cmd;
 
@@ -50,13 +50,13 @@ namespace coaching
         {
             Connect();
             cmd = new MySqlCommand();
-            cmd.CommandText = "select * from student where S_ID=" + id;
+            cmd.CommandText = "select * from student where S_ID=" + sid;
             cmd.Connection = conn;
             MySqlDataReader dr = cmd.ExecuteReader();
             //to load profile information
             if (dr.Read())
             {
-                sid = 
+                
                 sname = dr.GetString(1);
                 sloc = dr.GetString(2);
                 sdob = dr.GetString(3);
@@ -77,6 +77,10 @@ namespace coaching
                 sec.Text = ssec;
                 sem.Text = ssem;
             }
+
+            //fill the Result tab
+            SID.Text = sid;
+            lscourse.Text = scourse;
             //close connection and reader
             dr.Close();
             conn.Close();
@@ -91,7 +95,7 @@ namespace coaching
             Connect();
             int pending;
             cmd = new MySqlCommand();
-            cmd.CommandText = "select * from student_finance where S_ID=" + id;
+            cmd.CommandText = "select * from student_finance where S_ID=" + sid;
             Console.Write(cmd.CommandText);
             cmd.Connection = conn;
             dr = cmd.ExecuteReader();
@@ -120,7 +124,10 @@ namespace coaching
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Result_ENG result = new Result_ENG(sid);
+            result.Show();
+            this.Close();
+
         }
     }
 }

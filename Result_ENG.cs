@@ -22,8 +22,17 @@ namespace coaching
         private String id;
         private MySqlDataReader dr;
         private MySqlCommand cmd;
+
+        private String sub1,sub2,sub3;
+
         public Result_ENG()
         {
+            InitializeComponent();
+        }
+
+        public Result_ENG(String id)
+        {
+            this.id = id;
             InitializeComponent();
         }
 

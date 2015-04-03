@@ -1,6 +1,6 @@
 ﻿namespace coaching
 {
-    partial class Form4
+    partial class Result_ENGBIO
     {
         /// <summary>
         /// Required designer variable.
