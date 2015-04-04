@@ -34,6 +34,7 @@
             this.password = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Sub = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -91,12 +92,23 @@
             this.Sub.UseVisualStyleBackColor = true;
             this.Sub.Click += new System.EventHandler(this.Sub_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(249, 189);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(418, 256);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Sub);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.password);
@@ -105,7 +117,6 @@
             this.Controls.Add(this.label1);
             this.Name = "LogIn";
             this.Text = "LOGIN";
-           // this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,6 +131,7 @@
        // private System.Windows.Forms.Button login;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Sub;
+        private System.Windows.Forms.Button button1;
     }
 }
 
