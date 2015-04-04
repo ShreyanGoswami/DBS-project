@@ -16,7 +16,7 @@ namespace coaching
         private MySqlDataReader dr;
         private MySqlCommand cmd;
 
-        String tid, tname,tadd,tsalary;
+        String tid, tname,tadd,tsalary,tdob,tcontact;
 
         public TeacherForm()
         {
@@ -36,10 +36,66 @@ namespace coaching
             conn.Open();
         }
 
+        private void Disconnect()
+        {
+            dr.Close();
+            conn.Close();
+        }
+
+        private void DisplayInfo()
+        {
+            Connect();
+            cmd = new MySqlCommand();
+            cmd.CommandText = "select * from teacher where T_ID=" + tid;
+            cmd.Connection = conn;
+            MySqlDataReader dr = cmd.ExecuteReader();
+            //to load profile information
+            if (dr.Read())
+            {
+                tid = dr.GetString(0);
+                tname = dr.GetString(1);
+                tadd = dr.GetString(2);
+                tsalary = dr.GetString(3);
+                tdob = dr.GetString(4);
+                tcontact = dr.GetString(5);
+            }
+            id.Text = tid;
+            name.Text = tname;
+            address.Text = tadd;
+            dob.Text = tdob;
+            contact.Text = tcontact;
+            sal.Text = tsalary;
+            Disconnect();
+        }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            LogIn newForm = new LogIn();
+            newForm.Show();
+
+        }
+
+        private void LoadFinance()
+        {
+            Connect();
+            cmd = new MySqlCommand();
+            cmd.CommandText = "select * from teacher_finance where T_ID=" + tid;
+            cmd.Connection = conn;
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                f_id.Text = tid;
+                price.Text = tsalary;
+                paid.
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
     }

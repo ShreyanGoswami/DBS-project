@@ -35,7 +35,7 @@ namespace coaching
         {
             this.sid = sid;
             InitializeComponent();
-            Dispay();
+            DispayInfo();
             LoadFinance();
         }
 
@@ -46,7 +46,7 @@ namespace coaching
             conn.Open();
         }
 
-        private void Dispay()
+        private void DispayInfo()
         {
             Connect();
             cmd = new MySqlCommand();
