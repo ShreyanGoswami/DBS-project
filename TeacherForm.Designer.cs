@@ -1,6 +1,6 @@
 ﻿namespace coaching
 {
-    partial class Form7
+    partial class TeacherForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.Label();
+            this.sal = new System.Windows.Forms.Label();
             this.contact = new System.Windows.Forms.Label();
             this.dob = new System.Windows.Forms.Label();
             this.address = new System.Windows.Forms.Label();
@@ -116,7 +116,7 @@
             this.Profile.Controls.Add(this.comboBox2);
             this.Profile.Controls.Add(this.comboBox1);
             this.Profile.Controls.Add(this.label22);
-            this.Profile.Controls.Add(this.email);
+            this.Profile.Controls.Add(this.sal);
             this.Profile.Controls.Add(this.contact);
             this.Profile.Controls.Add(this.dob);
             this.Profile.Controls.Add(this.address);
@@ -182,16 +182,15 @@
             this.label22.Size = new System.Drawing.Size(86, 13);
             this.label22.TabIndex = 35;
             this.label22.Text = "SEMESTERS:";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
-            // email
+            // sal
             // 
-            this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(241, 311);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(41, 13);
-            this.email.TabIndex = 32;
-            this.email.Text = "label10";
+            this.sal.AutoSize = true;
+            this.sal.Location = new System.Drawing.Point(241, 311);
+            this.sal.Name = "sal";
+            this.sal.Size = new System.Drawing.Size(41, 13);
+            this.sal.TabIndex = 32;
+            this.sal.Text = "label10";
             // 
             // contact
             // 
@@ -247,7 +246,6 @@
             this.label8.Size = new System.Drawing.Size(73, 13);
             this.label8.TabIndex = 26;
             this.label8.Text = "SECTIONS:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -656,8 +654,9 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "LOGOUT";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form7
+            // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -665,7 +664,7 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form7";
+            this.Name = "TeacherForm";
             this.Text = "Teacher";
             this.tabControl1.ResumeLayout(false);
             this.Profile.ResumeLayout(false);
@@ -693,7 +692,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label email;
+        private System.Windows.Forms.Label sal;
         private System.Windows.Forms.Label contact;
         private System.Windows.Forms.Label dob;
         private System.Windows.Forms.Label address;

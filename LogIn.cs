@@ -35,12 +35,13 @@ namespace coaching
             if (dr.Read())
             {
                 char c = name[0];
-
+                String id = name.Substring(1);
                 switch (c)
                 {
+                         
                     case 'S':
                         // MessageBox.Show("Login success");
-                        String id = name.Substring(1);
+                       
                         StudentForm f2 = new StudentForm(id);
                         f2.Show();
                         this.Close();
@@ -48,6 +49,9 @@ namespace coaching
 
                     case 'T':
                         //load teacher form
+                        TeacherForm tf = new TeacherForm(id);
+                        tf.Show();
+                        this.Close();
                         break;
 
                 }
