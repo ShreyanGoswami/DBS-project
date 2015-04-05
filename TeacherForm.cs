@@ -27,6 +27,8 @@ namespace coaching
         {
             InitializeComponent();
             this.tid = tid;
+            DisplayInfo();
+            LoadFinance();
         }
 
         private void Connect()
@@ -82,7 +84,7 @@ namespace coaching
         {
             Connect();
             cmd = new MySqlCommand();
-            cmd.CommandText = "select * from teacher_finance where T_ID=" + tid;
+            cmd.CommandText = "select bonus_perc from teacher_finance where T_ID=" + tid;
             cmd.Connection = conn;
             MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -90,8 +92,10 @@ namespace coaching
             {
                 f_id.Text = tid;
                 price.Text = tsalary;
-                paid.
+                paid.Text=dr.GetString(0) ;
             }
+
+            Disconnect();
         }
 
         private void button2_Click(object sender, EventArgs e)
