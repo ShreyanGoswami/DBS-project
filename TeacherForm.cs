@@ -40,8 +40,8 @@ namespace coaching
 
         private void Disconnect()
         {
-            dr.Close();
-            conn.Close();
+            //dr.Close();
+            //conn.Close();
         }
 
         private void DisplayInfo()
@@ -67,7 +67,9 @@ namespace coaching
             dob.Text = tdob;
             contact.Text = tcontact;
             sal.Text = tsalary;
-            Disconnect();
+            //Disconnect();
+            dr.Close();
+            conn.Close();
         }
 
 
@@ -95,7 +97,9 @@ namespace coaching
                 paid.Text=dr.GetString(0) ;
             }
 
-            Disconnect();
+            //Disconnect();
+            dr.Close();
+            conn.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

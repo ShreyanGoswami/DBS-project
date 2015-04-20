@@ -24,7 +24,7 @@ namespace coaching
 
         /*class variables to store the student information
          */
-        String sid, sname, sloc,sdob,scontact,smail,scourse,ssec,ssem;
+        String sid, sname, sloc,sdob,scontact,smail,scourse,ssec,ssem,scentre;
 
         public StudentForm()
         {
@@ -38,6 +38,7 @@ namespace coaching
             DispayInfo();
             LoadFinance();
             LoadLocation();
+            LoadDays();
         }
 
         private void Connect()
@@ -120,10 +121,25 @@ namespace coaching
             if (dr.Read())
             {
                 ssec = dr.GetString(1);
+                scentre = dr.GetString(2);
                 sec.Text = ssec;
             }
             else Console.Write("No data");
             
+        }
+
+        //loads the days where the student has classes and fills the combo box
+        private void LoadDays()
+        {
+            Connect();
+            cmd = new MySqlCommand();
+            cmd.CommandText =" SELECT distinct (DAY) FROM timetable where timetable.Sec='"+ssec +"' and timetable.C_Address= '"+scentre+"'";
+            cmd.Connection = conn;
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                comboBox1.Items.Add(dr.GetString(0));
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -160,6 +176,15 @@ namespace coaching
             this.Close();
             LogIn newForm = new LogIn();
             newForm.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Connect();
+            cmd = new MySqlCommand();
+            cmd.CommandText = "select * from student_location where S_ID=" + sid;
+            cmd.Connection = conn;
+            dr = cmd.ExecuteReader();
         }
     }
 }

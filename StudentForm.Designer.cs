@@ -63,13 +63,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AM_9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AM_11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PM_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PM_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PM_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PM_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lscourse = new System.Windows.Forms.Label();
             this.SID = new System.Windows.Forms.Label();
@@ -83,6 +76,13 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.DAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AM_9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PM_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PM_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -424,6 +424,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.comboBox1);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -450,50 +451,14 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DAY,
             this.AM_9,
-            this.AM_11,
             this.PM_1,
-            this.PM_2,
             this.PM_4,
-            this.PM_6});
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 56);
+            this.Column1,
+            this.Column2});
+            this.dataGridView1.Location = new System.Drawing.Point(65, 58);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(738, 392);
+            this.dataGridView1.Size = new System.Drawing.Size(634, 308);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // DAY
-            // 
-            this.DAY.HeaderText = "DAY";
-            this.DAY.Name = "DAY";
-            // 
-            // AM_9
-            // 
-            this.AM_9.HeaderText = "9:00 AM";
-            this.AM_9.Name = "AM_9";
-            // 
-            // AM_11
-            // 
-            this.AM_11.HeaderText = "11:00 AM";
-            this.AM_11.Name = "AM_11";
-            // 
-            // PM_1
-            // 
-            this.PM_1.HeaderText = "1:00 PM";
-            this.PM_1.Name = "PM_1";
-            // 
-            // PM_2
-            // 
-            this.PM_2.HeaderText = "2:00 PM";
-            this.PM_2.Name = "PM_2";
-            // 
-            // PM_4
-            // 
-            this.PM_4.HeaderText = "4:00 PM";
-            this.PM_4.Name = "PM_4";
-            // 
-            // PM_6
-            // 
-            this.PM_6.HeaderText = "6:00 PM";
-            this.PM_6.Name = "PM_6";
             // 
             // tabPage4
             // 
@@ -620,6 +585,45 @@
             this.progressBar1.Size = new System.Drawing.Size(155, 24);
             this.progressBar1.TabIndex = 2;
             // 
+            // DAY
+            // 
+            this.DAY.HeaderText = "DAY";
+            this.DAY.Name = "DAY";
+            // 
+            // AM_9
+            // 
+            this.AM_9.HeaderText = "9:00-10:30 AM";
+            this.AM_9.Name = "AM_9";
+            // 
+            // PM_1
+            // 
+            this.PM_1.HeaderText = "11:00-12:30 PM";
+            this.PM_1.Name = "PM_1";
+            // 
+            // PM_4
+            // 
+            this.PM_4.HeaderText = "2:00-3:30 PM";
+            this.PM_4.Name = "PM_4";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "4:00-5:30 PM";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "6:00-7:30 PM";
+            this.Column2.Name = "Column2";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(65, 390);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,13 +689,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DAY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AM_9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AM_11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PM_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PM_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PM_4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PM_6;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
@@ -703,5 +700,12 @@
         private System.Windows.Forms.Label sem;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lscourse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DAY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AM_9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PM_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PM_4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
