@@ -57,9 +57,8 @@ namespace coaching
                 tid = dr.GetString(0);
                 tname = dr.GetString(1);
                 tadd = dr.GetString(2);
-                tsalary = dr.GetString(3);
-                tdob = dr.GetString(4);
-                tcontact = dr.GetString(5);
+                tdob = dr.GetString(3);
+                tcontact = dr.GetString(4);
             }
             id.Text = tid;
             name.Text = tname;
