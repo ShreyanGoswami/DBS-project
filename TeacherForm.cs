@@ -102,5 +102,10 @@ namespace coaching
         {
 
         }
+
+        private void TeacherForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

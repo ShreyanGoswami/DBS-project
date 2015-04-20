@@ -667,6 +667,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "TeacherForm";
             this.Text = "Teacher";
+            this.Load += new System.EventHandler(this.TeacherForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.Profile.ResumeLayout(false);
             this.Profile.PerformLayout();

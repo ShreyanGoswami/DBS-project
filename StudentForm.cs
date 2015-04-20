@@ -37,6 +37,7 @@ namespace coaching
             InitializeComponent();
             DispayInfo();
             LoadFinance();
+            LoadLocation();
         }
 
         private void Connect()
@@ -63,8 +64,8 @@ namespace coaching
                 scontact = dr.GetString(4);
                 smail = dr.GetString(5);
                 scourse = dr.GetString(6);
-                ssec = dr.GetString(7);
-                ssem = dr.GetString(8);
+                //ssec = dr.GetString(7);
+                ssem = dr.GetString(7);
 
                 ID.Text = sid;
                 name.Text = sname;
@@ -74,7 +75,7 @@ namespace coaching
                 contact.Text = scontact;
                 email.Text = smail;
                 course.Text = scourse;
-                sec.Text = ssec;
+                //sec.Text = ssec;
                 sem.Text = ssem;
             }
 
@@ -84,10 +85,7 @@ namespace coaching
             //close connection and reader
             dr.Close();
             conn.Close();
-            //to load financial details
-
-
-
+            
         }
 
         private void LoadFinance()
@@ -110,6 +108,22 @@ namespace coaching
                 Console.Write("Fetched data");
             }
             else Console.Write("No data");
+        }
+
+        private void LoadLocation()
+        {
+            Connect();
+            cmd = new MySqlCommand();
+            cmd.CommandText = "select * from student_location where S_ID=" + sid;
+            cmd.Connection = conn;
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                ssec = dr.GetString(1);
+                sec.Text = ssec;
+            }
+            else Console.Write("No data");
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

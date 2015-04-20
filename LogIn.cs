@@ -44,14 +44,15 @@ namespace coaching
                        
                         StudentForm f2 = new StudentForm(id);
                         f2.Show();
-                        this.Close();
+                        this.Hide();
+                        //this.Close();
                         break;
 
                     case 'T':
                         //load teacher form
                         TeacherForm tf = new TeacherForm(id);
                         tf.Show();
-                        this.Close();
+                        //this.Close();
                         break;
 
                 }

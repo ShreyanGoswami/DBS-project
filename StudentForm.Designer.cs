@@ -55,14 +55,10 @@
             this.pend = new System.Windows.Forms.Label();
             this.paid = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.Label();
-            this.cours = new System.Windows.Forms.Label();
-            this.cont = new System.Windows.Forms.Label();
             this.f_id = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
@@ -327,14 +323,10 @@
             this.tabPage2.Controls.Add(this.pend);
             this.tabPage2.Controls.Add(this.paid);
             this.tabPage2.Controls.Add(this.price);
-            this.tabPage2.Controls.Add(this.cours);
-            this.tabPage2.Controls.Add(this.cont);
             this.tabPage2.Controls.Add(this.f_id);
-            this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -357,7 +349,7 @@
             // pend
             // 
             this.pend.AutoSize = true;
-            this.pend.Location = new System.Drawing.Point(192, 316);
+            this.pend.Location = new System.Drawing.Point(192, 222);
             this.pend.Name = "pend";
             this.pend.Size = new System.Drawing.Size(41, 13);
             this.pend.TabIndex = 16;
@@ -366,7 +358,7 @@
             // paid
             // 
             this.paid.AutoSize = true;
-            this.paid.Location = new System.Drawing.Point(192, 278);
+            this.paid.Location = new System.Drawing.Point(192, 196);
             this.paid.Name = "paid";
             this.paid.Size = new System.Drawing.Size(41, 13);
             this.paid.TabIndex = 15;
@@ -375,29 +367,11 @@
             // price
             // 
             this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(192, 241);
+            this.price.Location = new System.Drawing.Point(192, 164);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(41, 13);
             this.price.TabIndex = 14;
             this.price.Text = "label10";
-            // 
-            // cours
-            // 
-            this.cours.AutoSize = true;
-            this.cours.Location = new System.Drawing.Point(192, 204);
-            this.cours.Name = "cours";
-            this.cours.Size = new System.Drawing.Size(41, 13);
-            this.cours.TabIndex = 13;
-            this.cours.Text = "label10";
-            // 
-            // cont
-            // 
-            this.cont.AutoSize = true;
-            this.cont.Location = new System.Drawing.Point(192, 165);
-            this.cont.Name = "cont";
-            this.cont.Size = new System.Drawing.Size(41, 13);
-            this.cont.TabIndex = 12;
-            this.cont.Text = "label10";
             // 
             // f_id
             // 
@@ -408,21 +382,11 @@
             this.f_id.TabIndex = 11;
             this.f_id.Text = "label10";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(60, 165);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 13);
-            this.label15.TabIndex = 6;
-            this.label15.Text = "COURSE ID:";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(60, 278);
+            this.label14.Location = new System.Drawing.Point(60, 196);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(40, 13);
             this.label14.TabIndex = 5;
@@ -432,7 +396,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(60, 316);
+            this.label13.Location = new System.Drawing.Point(60, 222);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 13);
             this.label13.TabIndex = 4;
@@ -442,21 +406,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(60, 241);
+            this.label12.Location = new System.Drawing.Point(60, 164);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 3;
             this.label12.Text = "PRICE:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(60, 204);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 13);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "COURSE:";
             // 
             // label10
             // 
@@ -722,12 +676,10 @@
         private System.Windows.Forms.Label pend;
         private System.Windows.Forms.Label paid;
         private System.Windows.Forms.Label price;
-        private System.Windows.Forms.Label cours;
         private System.Windows.Forms.Label f_id;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar progressBar1;
@@ -750,8 +702,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label sem;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label cont;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lscourse;
     }
 }
