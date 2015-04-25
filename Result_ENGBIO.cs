@@ -19,9 +19,11 @@ namespace coaching
         *cmd is used to pass MySQL query to the database
         */
         private MySqlConnection conn;
-        private String id;
+       // private String id;
         private MySqlDataReader dr;
         private MySqlCommand cmd;
+
+        private String sub, cname = "Medical", sem;
 
         private String sid;
         public Result_ENGBIO()
@@ -50,9 +52,51 @@ namespace coaching
             conn.Close();
 
         }
-        private void Result_ENGBIO_Load(object sender, EventArgs e)
-        {
 
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LogIn frm = new LogIn();
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Connect();
+            String cid = null;
+            cmd = new MySqlCommand();
+            sub = comboBox2.GetItemText(this.comboBox1.SelectedItem);
+            sem = comboBox1.GetItemText(this.comboBox2.SelectedItem);
+            if (sub.Equals("Physics"))
+            {
+
+                cid = sem + "01";
+            }
+            else if (sub.Equals("Chemistry"))
+            {
+                cid = sem + "03";
+            }
+            else if (sub.Equals("Biology"))
+            {
+                cid = sem + "02";
+            }
+            else
+            {
+                MessageBox.Show("Please choose valid subject and semester");
+            }
+            Console.Write(cid);
+            cmd.CommandText = "select marks from exam natural join result where s_id='" + sid + "' and exam.c_id='" + cid + "'";
+            cmd.Connection = conn;
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                MarksLBL.Text = dr.GetString(0);
+            }
+            else
+                MessageBox.Show("Invalid details");
+            dr.Close();
         }
     }
 }

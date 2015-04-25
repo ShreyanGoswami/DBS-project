@@ -101,14 +101,42 @@ namespace coaching
             conn.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void TeacherForm_Load(object sender, EventArgs e)
         {
+            Connect();
+            cmd = new MySqlCommand();
+            cmd.CommandText = "SELECT C_Name FROM course NATURAL JOIN teaches WHERE teaches.T_ID =" + tid;
+            cmd.Connection = conn;
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox1.Items.Add(dr.GetString(0));
+            }
 
+            dr.Close();
+            //LoadSec();
+            LoadSem();
+            
+        }
+
+        
+
+        private void LoadSem()
+        {
+            cmd = new MySqlCommand();
+            cmd.CommandText = "SELECT sem FROM course NATURAL JOIN teaches WHERE teaches.T_ID =" + tid;
+            cmd.Connection = conn;
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox3.Items.Add(dr.GetString(0));
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Console.Write("Chosen");
         }
     }
 }

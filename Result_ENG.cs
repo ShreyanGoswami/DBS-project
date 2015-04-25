@@ -23,7 +23,7 @@ namespace coaching
         private MySqlDataReader dr;
         private MySqlCommand cmd;
 
-        private String sub1,sub2,sub3;
+        private String sub,sem;
 
         public Result_ENG()
         {
@@ -33,8 +33,9 @@ namespace coaching
         public Result_ENG(String id)
         {
             this.id = id;
-            ID.Text = id;
+            Console.Write(id);
             InitializeComponent();
+            R_ID.Text = id;
         }
 
         //call this function to establish a connection with the database
@@ -56,11 +57,54 @@ namespace coaching
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+            LogIn frm = new LogIn();
+            frm.Show();
         }
 
         private void Result_ENG_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Connect();
+            String cid=null;
+            cmd = new MySqlCommand();
+            sub =comboBox2.GetItemText(this.comboBox2.SelectedItem);
+            sem = comboBox1.GetItemText(this.comboBox1.SelectedItem);
+            if (sub.Equals("Physics"))
+            {
+
+                cid=sem+"01";
+            }
+            else if(sub.Equals("Chemistry"))
+            {
+                cid=sem+"03";
+            }
+            else if(sub.Equals("Math"))
+            {
+                cid=sem+"04";
+            }
+            else
+            {
+                MessageBox.Show("Please choose valid subject and semester");
+            }
+            Console.Write(cid);
+            cmd.CommandText="select marks from exam natural join result where s_id='"+id+"' and exam.c_id='"+cid+"'";
+            cmd.Connection=conn;
+            dr=cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                MarksLBL.Text = dr.GetString(0);
+            }
+            else
+                MessageBox.Show("Invalid details");
+            dr.Close();
+        }
+
+        
+
+        
     }
 }

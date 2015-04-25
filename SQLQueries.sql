@@ -27,11 +27,13 @@ insert into course values (101,'Math1','ENG', 1);
 insert into course values (103,'Physics1','ENG',1);
 insert into course values (104,'Chemistry1','ENG',1);
 insert into course values (105,'Biology1','Medical',1);
+insert into course values(201,'Math2','ENG',2);
 
 Teaches:
 insert into teaches values(1,101);
 insert into teaches values(2,103);
 insert into teaches values(3,104);
+insert into teaches values(1,201);
 
 
 Timetable
@@ -46,5 +48,13 @@ insert into teacher values (1,'Teacher1','def','1983-5-15','9864078213','abc');
 insert into teacher values (2,'Teacher2','xyz','1982-9-30','9543352100','abc');
 insert into teacher values (3,'Teacher3','rsr','1981-11-20','9916694506','abc');
 insert into teacher values (4,'Teacher4','jui','1980-2-11','997256149','abc');
+
+Exam:
+insert into exam values ('1011','101','2015-04-21','1');
+insert into exam values ('1031',103','2015-04-22',2);
+
+Result
+insert into result values(1234,1,70);
+insert into result values(1108,1,75);
 
 
