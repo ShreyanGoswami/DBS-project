@@ -61,6 +61,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -75,14 +76,12 @@
             this.label21 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.DAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AM_9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PM_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PM_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -434,6 +433,15 @@
             this.tabPage3.Text = "Timetable";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(65, 390);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -578,13 +586,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(449, 508);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(155, 24);
-            this.progressBar1.TabIndex = 2;
-            // 
             // DAY
             // 
             this.DAY.HeaderText = "DAY";
@@ -592,44 +593,34 @@
             // 
             // AM_9
             // 
-            this.AM_9.HeaderText = "9:00-10:30 AM";
+            this.AM_9.HeaderText = "First-Class";
             this.AM_9.Name = "AM_9";
             // 
             // PM_1
             // 
-            this.PM_1.HeaderText = "11:00-12:30 PM";
+            this.PM_1.HeaderText = "Second-Class";
             this.PM_1.Name = "PM_1";
             // 
             // PM_4
             // 
-            this.PM_4.HeaderText = "2:00-3:30 PM";
+            this.PM_4.HeaderText = "Third-Class";
             this.PM_4.Name = "PM_4";
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "4:00-5:30 PM";
+            this.Column1.HeaderText = "Fourth-Class";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "6:00-7:30 PM";
+            this.Column2.HeaderText = "Fifth-Class";
             this.Column2.Name = "Column2";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(65, 390);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 544);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Name = "StudentForm";
@@ -686,7 +677,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label18;
@@ -700,12 +690,12 @@
         private System.Windows.Forms.Label sem;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lscourse;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DAY;
         private System.Windows.Forms.DataGridViewTextBoxColumn AM_9;
         private System.Windows.Forms.DataGridViewTextBoxColumn PM_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn PM_4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
