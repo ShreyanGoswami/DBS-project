@@ -136,7 +136,23 @@ namespace coaching
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Console.Write("Chosen");
+            //Console.Write("Chosen");
+            Connect();
+            String[] text = {textBox1.Text,textBox3.Text,textBox5.Text,textBox6.Text,textBox7.Text};
+            String cmdText = null;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i].Equals(""))
+                {
+                    continue;
+                }
+                else
+                    cmdText+="'"+text[i]+"'";
+            }
+            Console.Write(cmdText);
+            cmd=new MySqlCommand();
+            //cmd.CommandText= "Select "+cmdText+" from student
+
         }
     }
 }

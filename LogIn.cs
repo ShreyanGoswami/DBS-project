@@ -40,19 +40,17 @@ namespace coaching
                 {
                          
                     case 'S':
-                        // MessageBox.Show("Login success");
-                       
-                        StudentForm f2 = new StudentForm(id);
-                        f2.Show();
+                        
                         this.Hide();
-                        //this.Close();
+                        StudentForm form2 = new StudentForm();
+                        form2.Show();
                         break;
 
                     case 'T':
                         //load teacher form
                         TeacherForm tf = new TeacherForm(id);
                         tf.Show();
-                        //this.Close();
+                        this.Hide();
                         break;
 
                 }
