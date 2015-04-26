@@ -42,7 +42,7 @@ namespace coaching
                     case 'S':
                         
                         this.Hide();
-                        StudentForm form2 = new StudentForm();
+                        StudentForm form2 = new StudentForm(id);
                         form2.Show();
                         break;
 

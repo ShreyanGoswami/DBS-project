@@ -52,6 +52,7 @@ namespace coaching
         private void DispayInfo()
         {
             Connect();
+            Console.Write("Displaying general info");
             cmd = new MySqlCommand();
             cmd.CommandText = "select * from student where S_ID=" + sid;
             cmd.Connection = conn;
