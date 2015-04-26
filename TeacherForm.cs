@@ -29,6 +29,7 @@ namespace coaching
             this.tid = tid;
             DisplayInfo();
             LoadFinance();
+            LoadTimetable();
         }
 
         private void Connect()
@@ -65,7 +66,8 @@ namespace coaching
             address.Text = tadd;
             dob.Text = tdob;
             contact.Text = tcontact;
-            sal.Text = tsalary;
+            price.Text = tsalary;
+            f_id.Text = tid;
             //Disconnect();
             dr.Close();
             conn.Close();
@@ -116,8 +118,22 @@ namespace coaching
 
             dr.Close();
             //LoadSec();
-            LoadSem();
-            
+            LoadSem();   
+        }
+
+        private void LoadTimetable()
+        {
+            Connect();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "select day, max(firstclass) as 'First-Class', max(secondclass) as 'Second-Class', max(thirdclass) as 'Third-Class', max(fourthclass) as 'Fourth-Class', max(fifthclass) as 'Fifth-Class' from (select day,sec,t_id, if(time = '9:00:00', c_name, '--') as firstclass,if(time = '11:00:00', c_name, '--') as secondclass, if(time = '14:00:00', c_name, '--') as thirdclass, if(time = '16:00:00', c_name, '--') as fourthclass, if(time = '18:00:00', c_name, '--') as fifthclass from (SELECT day,time,c_name,tt.t_id, sec FROM timetable as tt inner join teaches as t on tt.t_id = t.t_id inner join course as c on t.c_id = c.c_id) as a) as b where t_id =" + tid + " group by day";
+            cmd.Connection = conn;
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Console.Write(dr.GetString(0) + " " + dr.GetString(1) + " " + dr.GetString(2) + " " + dr.GetString(3) + " " + dr.GetString(4) + " " + dr.GetString(5) + "\n");
+                String[] row1 = { dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetString(4), dr.GetString(5) };
+                dataGridView1.Rows.Add(row1);
+            }
         }
 
         
@@ -138,20 +154,28 @@ namespace coaching
         {
             //Console.Write("Chosen");
             Connect();
+           
             String[] text = {textBox1.Text,textBox3.Text,textBox5.Text,textBox6.Text,textBox7.Text};
             String cmdText = null;
             for (int i = 0; i < text.Length; i++)
             {
                 if (text[i].Equals(""))
                 {
-                    continue;
+                    cmdText += " ";
                 }
                 else
-                    cmdText+="'"+text[i]+"'";
+                {
+                    cmdText += text[i] + " ";
+                }
             }
             Console.Write(cmdText);
-            cmd=new MySqlCommand();
-            //cmd.CommandText= "Select "+cmdText+" from student
+            String [] param= new string[5];
+            param = cmdText.Split(' ');
+            for (int i = 0; i < param.Length; i++)
+                Console.Write(param[i] + ",");
+            Form9 frm = new Form9(param,tid);
+            this.Hide();
+            frm.Show();
 
         }
     }

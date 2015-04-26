@@ -593,27 +593,27 @@
             // 
             // AM_9
             // 
-            this.AM_9.HeaderText = "First-Class";
+            this.AM_9.HeaderText = "9 AM";
             this.AM_9.Name = "AM_9";
             // 
             // PM_1
             // 
-            this.PM_1.HeaderText = "Second-Class";
+            this.PM_1.HeaderText = "11 AM";
             this.PM_1.Name = "PM_1";
             // 
             // PM_4
             // 
-            this.PM_4.HeaderText = "Third-Class";
+            this.PM_4.HeaderText = "2PM";
             this.PM_4.Name = "PM_4";
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Fourth-Class";
+            this.Column1.HeaderText = "4PM";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Fifth-Class";
+            this.Column2.HeaderText = "6PM";
             this.Column2.Name = "Column2";
             // 
             // StudentForm

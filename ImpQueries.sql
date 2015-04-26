@@ -5,7 +5,7 @@ max(secondclass) as 'Second-Class',
 max(thirdclass) as 'Third-Class',
 max(fourthclass) as 'Fourth-Class',
 max(fifthclass) as 'Fifth-Class' from
-(select day,sec
+(select day,sec,
 if(time = '9:00:00', c_name, '--') as firstclass,
 if(time = '11:00:00', c_name, '--') as secondclass,
 if(time = '14:00:00', c_name, '--') as thirdclass,

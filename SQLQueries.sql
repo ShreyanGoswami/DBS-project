@@ -35,6 +35,12 @@ insert into teaches values(2,103);
 insert into teaches values(3,104);
 insert into teaches values(1,201);
 
+Teacher finance:
+insert into teacher_finance values (1,30000, 5)
+insert into teacher_finance values (2,40000, 3)
+insert into teacher_finance values (3,35000,4)
+
+
 
 Timetable
 insert into timetable values('Monday','02:00:00',2,'A','abc);

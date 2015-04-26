@@ -43,7 +43,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1, 37);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(658, 466);
+            this.dataGridView1.Size = new System.Drawing.Size(717, 503);
             this.dataGridView1.TabIndex = 0;
             // 
             // label21
@@ -64,12 +64,13 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "EXIT";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 495);
+            this.ClientSize = new System.Drawing.Size(743, 556);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.dataGridView1);
