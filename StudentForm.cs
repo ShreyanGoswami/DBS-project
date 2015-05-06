@@ -52,6 +52,7 @@ namespace coaching
         private void DispayInfo()
         {
             Connect();
+            String[] sdobarr = new String[2];
             Console.Write("Displaying general info");
             cmd = new MySqlCommand();
             cmd.CommandText = "select * from student where S_ID=" + sid;
@@ -64,6 +65,7 @@ namespace coaching
                 sname = dr.GetString(1);
                 sloc = dr.GetString(2);
                 sdob = dr.GetString(3);
+                sdobarr = sdob.Split(' ');
                 scontact = dr.GetString(4);
                 smail = dr.GetString(5);
                 scourse = dr.GetString(6);
@@ -74,7 +76,7 @@ namespace coaching
                 name.Text = sname;
                 address.Text = sloc;
 
-                dob.Text = sdob;
+                dob.Text = sdobarr[0];
                 contact.Text = scontact;
                 email.Text = smail;
                 course.Text = scourse;
@@ -95,6 +97,7 @@ namespace coaching
         {
             Connect();
             int pending;
+            
             cmd = new MySqlCommand();
             cmd.CommandText = "select * from student_finance where S_ID=" + sid;
             Console.Write(cmd.CommandText);
@@ -140,7 +143,7 @@ namespace coaching
             dr = cmd.ExecuteReader();
             while(dr.Read())
             {
-                comboBox1.Items.Add(dr.GetString(0));
+               // comboBox1.Items.Add(dr.GetString(0));
             }
         }
 
@@ -193,7 +196,7 @@ namespace coaching
         {
             Connect();
             cmd = new MySqlCommand();
-            cmd.CommandText= "select day, max(firstclass) as 'First-Class',max(secondclass) as 'Second-Class',max(thirdclass) as 'Third-Class',max(fourthclass) as 'Fourth-Class',max(fifthclass) as 'Fifth-Class' from (select day,sec, if(time = '9:00:00', c_name, '--') as firstclass, if(time = '11:00:00', c_name, '--') as secondclass, if(time = '14:00:00', c_name, '--') as thirdclass, if(time = '16:00:00', c_name, '--') as fourthclass, if(time = '18:00:00', c_name, '--') as fifthclass from (SELECT day,time,c_name,sec FROM timetable as tt inner join teaches as t on tt.t_id = t.t_id inner join course as c on t.c_id = c.c_id where sem="+ssem+") as a) as b where sec ='"+ssec+"' group by day ORDER BY FIELD(day, 'Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday','Saturday')";
+            cmd.CommandText = "select day, max(firstclass) as 'First-Class',max(secondclass) as 'Second-Class',max(thirdclass) as 'Third-Class',max(fourthclass) as 'Fourth-Class',max(fifthclass) as 'Fifth-Class' from (select day,sec, if(time = '9:00:00', c_name, '--') as firstclass, if(time = '11:00:00', c_name, '--') as secondclass, if(time = '14:00:00', c_name, '--') as thirdclass, if(time = '16:00:00', c_name, '--') as fourthclass, if(time = '18:00:00', c_name, '--') as fifthclass from (SELECT day,time,c_name,sec FROM timetable as tt inner join teaches as t on tt.t_id = t.t_id inner join course as c on t.c_id = c.c_id where sem=" + ssem + ") as a) as b where sec ='" + ssec + "' group by day ORDER BY FIELD(day, 'Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday','Saturday');";
             cmd.Connection = conn;
            // MySqlDataAdapter da=new MySqlDataAdapter(cmd);
            // DataSet ds=new DataSet();
@@ -206,6 +209,11 @@ namespace coaching
                 String[] row1 = { dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetString(4), dr.GetString(5) };
                 dataGridView1.Rows.Add(row1);
             }
+        }
+
+        private void StudentForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

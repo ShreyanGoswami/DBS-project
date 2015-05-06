@@ -53,6 +53,12 @@ namespace coaching
                         this.Hide();
                         break;
 
+                    case 'F':
+                        Staff frm = new Staff(id);
+                        frm.Show();
+                        this.Hide();
+                        break;
+
                 }
             }
             else

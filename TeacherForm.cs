@@ -39,15 +39,12 @@ namespace coaching
             conn.Open();
         }
 
-        private void Disconnect()
-        {
-            //dr.Close();
-            //conn.Close();
-        }
+       
 
         private void DisplayInfo()
         {
             Connect();
+            String[] dobarr=new String[2];
             cmd = new MySqlCommand();
             cmd.CommandText = "select * from teacher where T_ID=" + tid;
             cmd.Connection = conn;
@@ -59,14 +56,15 @@ namespace coaching
                 tname = dr.GetString(1);
                 tadd = dr.GetString(2);
                 tdob = dr.GetString(3);
+                dobarr = tdob.Split(' ');
                 tcontact = dr.GetString(4);
             }
             id.Text = tid;
             name.Text = tname;
             address.Text = tadd;
-            dob.Text = tdob;
+            dob.Text = dobarr[0];
             contact.Text = tcontact;
-            price.Text = tsalary;
+           
             f_id.Text = tid;
             //Disconnect();
             dr.Close();
@@ -87,15 +85,15 @@ namespace coaching
         {
             Connect();
             cmd = new MySqlCommand();
-            cmd.CommandText = "select bonus_perc from teacher_finance where T_ID=" + tid;
+            cmd.CommandText = "select * from teacher_finance where T_ID=" + tid;
             cmd.Connection = conn;
             MySqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.Read())
             {
-                f_id.Text = tid;
-                price.Text = tsalary;
-                paid.Text=dr.GetString(0) ;
+                f_id.Text = dr.GetString(0);
+                price.Text = dr.GetString(1);
+                paid.Text=dr.GetString(2) ;
             }
 
             //Disconnect();
@@ -110,14 +108,31 @@ namespace coaching
             cmd = new MySqlCommand();
             cmd.CommandText = "SELECT C_Name FROM course NATURAL JOIN teaches WHERE teaches.T_ID =" + tid;
             cmd.Connection = conn;
-            MySqlDataReader dr = cmd.ExecuteReader();
+            dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 comboBox1.Items.Add(dr.GetString(0));
             }
+            dr.Close();
+
+            cmd.CommandText = "Select sec from timetable where T_ID=" + tid;
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox2.Items.Add(dr.GetString(0));
+            }
 
             dr.Close();
-            //LoadSec();
+
+            cmd.CommandText = "Select EX_ID from exam";
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                comboBox4.Items.Add(dr.GetString(0));
+            }
+
+            dr.Close();
+
             LoadSem();   
         }
 
@@ -134,6 +149,7 @@ namespace coaching
                 String[] row1 = { dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetString(4), dr.GetString(5) };
                 dataGridView1.Rows.Add(row1);
             }
+            dr.Close();
         }
 
         
@@ -148,6 +164,7 @@ namespace coaching
             {
                 comboBox3.Items.Add(dr.GetString(0));
             }
+            dr.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -173,10 +190,25 @@ namespace coaching
             param = cmdText.Split(' ');
             for (int i = 0; i < param.Length; i++)
                 Console.Write(param[i] + ",");
-            Form9 frm = new Form9(param,tid);
+            Form9 frm = new Form9(param,tid,1,"T" );
             this.Hide();
             frm.Show();
 
         }
+
+        private void SearchMax_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "select max_marks(" + this.comboBox4.SelectedItem + ") from result";
+            cmd.Connection = conn;
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                dispMax.Text = dr.GetString(0);
+            }
+            dr.Close();
+        }
+
+        
     }
 }

@@ -65,9 +65,6 @@
             this.PM_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PM_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label21 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -82,15 +79,20 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dispMax = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.SearchMax = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Profile.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Timetable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -98,8 +100,8 @@
             this.tabControl1.Controls.Add(this.Profile);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.Timetable);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(8, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -450,35 +452,6 @@
             this.label10.TabIndex = 41;
             this.label10.Text = "TIMETABLE";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(750, 469);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "Books";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 72);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(747, 394);
-            this.dataGridView2.TabIndex = 14;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(316, 23);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(91, 25);
-            this.label21.TabIndex = 13;
-            this.label21.Text = "BOOKS";
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label19);
@@ -616,6 +589,65 @@
             this.label33.TabIndex = 19;
             this.label33.Text = "ID:";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dispMax);
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.SearchMax);
+            this.tabPage4.Controls.Add(this.comboBox4);
+            this.tabPage4.Controls.Add(this.label6);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(750, 469);
+            this.tabPage4.TabIndex = 5;
+            this.tabPage4.Text = "Max marks";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dispMax
+            // 
+            this.dispMax.AutoSize = true;
+            this.dispMax.Location = new System.Drawing.Point(225, 167);
+            this.dispMax.Name = "dispMax";
+            this.dispMax.Size = new System.Drawing.Size(0, 13);
+            this.dispMax.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(111, 167);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Max Marks";
+            // 
+            // SearchMax
+            // 
+            this.SearchMax.Location = new System.Drawing.Point(172, 111);
+            this.SearchMax.Name = "SearchMax";
+            this.SearchMax.Size = new System.Drawing.Size(93, 28);
+            this.SearchMax.TabIndex = 2;
+            this.SearchMax.Text = "Search";
+            this.SearchMax.UseVisualStyleBackColor = true;
+            this.SearchMax.Click += new System.EventHandler(this.SearchMax_Click);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(205, 60);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(105, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Exam ID";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(118, 507);
@@ -644,11 +676,10 @@
             this.Timetable.ResumeLayout(false);
             this.Timetable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -659,7 +690,6 @@
         private System.Windows.Forms.TabPage Profile;
         private System.Windows.Forms.TabPage Timetable;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label contact;
@@ -695,8 +725,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button2;
@@ -710,5 +738,11 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label dispMax;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button SearchMax;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label6;
     }
 }

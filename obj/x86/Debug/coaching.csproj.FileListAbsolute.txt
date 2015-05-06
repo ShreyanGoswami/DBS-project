@@ -43,3 +43,4 @@ C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Result_ENG.resourc
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Result_ENGBIO.resources
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.ResultForm.resources
 C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.TeacherForm.resources
+C:\Users\Shreyan\Documents\DBS-project\obj\x86\Debug\coaching.Staff.resources

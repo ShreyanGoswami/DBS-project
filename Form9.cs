@@ -12,22 +12,25 @@ namespace coaching
 {
     public partial class Form9 : Form
     {
-        String tid;
-        String[] param=new String[5];
+        String id,owner;
+        String[] param=null;
+        int x;
         public Form9()
         {
             InitializeComponent();
         }
 
-        public Form9(String[] temp_param,String tid)
+        public Form9(String[] temp_param,String id, int x,String owner)
         {
-            this.tid = tid;
+            this.id = id;
+            this.x = x;
+            this.owner = owner;
             InitializeComponent();
-           
 
-            for (int i = 0; i < 5; i++)
+            param = new String[temp_param.Length];
+            for (int i = 0; i < temp_param.Length; i++)
                 this.param[i] = " ";
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < temp_param.Length; i++)
             {
                 if(temp_param[i].Equals(""))
                 {
@@ -36,14 +39,34 @@ namespace coaching
                 else
                     this.param[i]=temp_param[i];
             }
-            LoadDetails();
+            switch(x)
+            {
+
+            case 1: LoadDetails();
+                    break;
+            case 2: LoadDetails1();
+                    break;
+            case 3: LoadDetails2();
+                    break;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            TeacherForm tfrm = new TeacherForm(tid);
-            tfrm.Show();
+            switch(owner)
+            {
+                case "S":
+                    Staff sfrm = new Staff(id);
+                    sfrm.Show();
+                    break;
+                case "T":
+                    TeacherForm tfrm = new TeacherForm(id);
+                    tfrm.Show();
+                    break;
+                
+
+            }
         }
 
         private void LoadDetails()
@@ -61,6 +84,43 @@ namespace coaching
             da.Fill(ds);
 
             dataGridView1.DataSource = ds.Tables[0];
+        }
+         private void LoadDetails1() //EDIT QUERIES
+        {
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString="Datasource=localhost;Database=Coaching institute;uid=root;pwd=;Convert Zero Datetime=True";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "select * from Teacher where T_ID= ' " + param[0] + "' or T_name='" + param[1] + "'";
+            cmd.Connection = conn;
+            Console.Write(cmd.CommandText);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+        private void LoadDetails2()
+        {
+            
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString="Datasource=localhost;Database=Coaching institute;uid=root;pwd=;Convert Zero Datetime=True";
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "select * from alumni where S_ID= ' " + param[0] + "' or S_name='" + param[1] + "'";           cmd.Connection = conn;
+            Console.Write(cmd.CommandText);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            dataGridView1.DataSource = ds.Tables[0];
+        
+        }
+        private void Form9_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
